@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <title>Update Staff</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+          crossorigin="anonymous">
+</head>
+<body>
+<!-- Navigation bar for updating staff -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">UPDATE HEALTH DATA >> </a>
+    <!-- Button for toggling the navigation bar on small screens -->
+    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- List of navigation links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <!-- Link to the main menu page, with Thymeleaf dynamic URL generation -->
+            <li class="nav-item">
+                <a class="nav-link" href = "#" th:href ="@{/}">Main Menu</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Container for updating staff with a top margin -->
+<div class="container my-5">
+    <h3> Update Health Data</h3>
+    <!-- Card component -->
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-8">
+                <!-- Form for updating staff with Thymeleaf dynamic action URL and object binding -->
+                <form action="#"
+                      th:action="@{/healthDatas/update/{id}(id=${healthData.healthDataId})}"
+                      th:object="${healthData}" th:method="post">
+                    <!-- Row to organize form inputs in a horizontal layout -->
+                    <div class="row">
+                        <!-- Input field for timestamp -->
+                        <div class="form-group col-md-8">
+                            <label for="timestamp" class="col-form-label">Timestamp</label>
+                            <input type="text" th:field="*{timestamp}" class="form-control" id="timestamp" placeholder="Timestamp">
+                            <span th:if="${#fields.hasErrors('timestamp')}" th:errors="*{timestamp}" class="text-danger"></span>
+                        </div>
+
+                        <!-- Input field for temperature -->
+                        <div class="form-group col-md-8">
+                            <label for="temperature" class="col-form-label">Temperature</label>
+                            <input type="text" th:field="*{temperature}" class="form-control" id="temperature" placeholder="Temperature">
+                            <span th:if="${#fields.hasErrors('temperature')}" th:errors="*{temperature}" class="text-danger"></span>
+                        </div>
+
+                        <!-- Input field for BMI -->
+                        <div class="form-group col-md-8">
+                            <label for="bmi" class="col-form-label">BMI</label>
+                            <input type="text" th:field="*{BMI}" class="form-control" id="bmi" placeholder="BMI">
+                            <span th:if="${#fields.hasErrors('BMI')}" th:errors="*{BMI}" class="text-danger"></span>
+                        </div>
+
+                        <!-- Input field for weight -->
+                        <div class="form-group col-md-8">
+                            <label for="weight" class="col-form-label">Weight</label>
+                            <input type="text" th:field="*{weight}" class="form-control" id="weight" placeholder="Weight">
+                            <span th:if="${#fields.hasErrors('weight')}" th:errors="*{weight}" class="text-danger"></span>
+                        </div>
+
+                        <!-- Input field for heart rate -->
+                        <div class="form-group col-md-8">
+                            <label for="heartRate" class="col-form-label">Heart Rate</label>
+                            <input type="text" th:field="*{heartRate}" class="form-control" id="heartRate" placeholder="Heart Rate">
+                            <span th:if="${#fields.hasErrors('heartRate')}" th:errors="*{heartRate}" class="text-danger"></span>
+                        </div>
+
+                        <!-- Input field for systolic -->
+                        <div class="form-group col-md-8">
+                            <label for="systolic" class="col-form-label">Systolic</label>
+                            <input type="text" th:field="*{systolic}" class="form-control" id="systolic" placeholder="Systolic">
+                            <span th:if="${#fields.hasErrors('systolic')}" th:errors="*{systolic}" class="text-danger"></span>
+                        </div>
+
+                        <!-- Input field for diastolic -->
+                        <div class="form-group col-md-8">
+                            <label for="diastolic" class="col-form-label">Diastolic</label>
+                            <input type="text" th:field="*{diastolic}" class="form-control" id="diastolic" placeholder="Diastolic">
+                            <span th:if="${#fields.hasErrors('diastolic')}" th:errors="*{diastolic}" class="text-danger"></span>
+                        </div>
+
+                        <!-- Input field for glucose level -->
+                        <div class="form-group col-md-8">
+                            <label for="glucoseLevel" class="col-form-label">Glucose Level</label>
+                            <input type="text" th:field="*{glucoseLevel}" class="form-control" id="glucoseLevel" placeholder="Glucose Level">
+                            <span th:if="${#fields.hasErrors('glucoseLevel')}" th:errors="*{glucoseLevel}" class="text-danger"></span>
+                        </div>
+
+                        <!-- Input field for LDL -->
+                        <div class="form-group col-md-8">
+                            <label for="LDL" class="col-form-label">LDL</label>
+                            <input type="text" th:field="*{LDL}" class="form-control" id="LDL" placeholder="LDL">
+                            <span th:if="${#fields.hasErrors('LDL')}" th:errors="*{LDL}" class="text-danger"></span>
+                        </div>
+
+                        <!-- Input field for HDL -->
+                        <div class="form-group col-md-8">
+                            <label for="HDL" class="col-form-label">HDL</label>
+                            <input type="text" th:field="*{HDL}" class="form-control" id="HDL" placeholder="HDL">
+                            <span th:if="${#fields.hasErrors('HDL')}" th:errors="*{HDL}" class="text-danger"></span>
+                        </div>
+
+                        <!-- Input field for triglycerides -->
+                        <div class="form-group col-md-8">
+                            <label for="triglycerides" class="col-form-label">Triglycerides</label>
+                            <input type="text" th:field="*{triglycerides}" class="form-control" id="triglycerides" placeholder="Triglycerides">
+                            <span th:if="${#fields.hasErrors('triglycerides')}" th:errors="*{triglycerides}" class="text-danger"></span>
+                        </div>
+
+                        <!-- Input field for total -->
+                        <div class="form-group col-md-8">
+                            <label for="total" class="col-form-label">Total</label>
+                            <input type="text" th:field="*{total}" class="form-control" id="total" placeholder="Total">
+                            <span th:if="${#fields.hasErrors('total')}" th:errors="*{total}" class="text-danger"></span>
+                        </div>
+
+                        <!-- Select field for patient -->
+                        <div class="form-group col-md-8">
+                            <label for="patient" class="col-form-label">Patient</label>
+                            <select th:field="*{patient.patientId}" class="form-control" id="patient">
+                                <option value="">Choose Patient...</option>
+                                <option th:each="patient : ${patients}" th:value="${patient.patientId}" th:text="${patient.patientId}"></option>
+                            </select>
+                            <span th:if="${#fields.hasErrors('patient.patientId')}" th:errors="*{patient.patientId}" class="text-danger"></span>
+                        </div>
+
+                        <!-- Button to submit the form for updating staff -->
+                        <div class="form-group col-md-8">
+                            <input type="submit" class="btn btn-success"
+                                   value="Update Staff">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
