@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <title>Update Health Data</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--==================== ICON WEBSITE ====================-->
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/Doc/Images/rishara-logo.png}" />
+
+    <!--==================== BOOTSTRAP CSS ====================-->
+    <link th:href="@{/Doc/Plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css}">
+    <!--==================== REMIXICON CSS ====================-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!--==================== SLICK SLIDER CSS ====================-->
+    <link th:href="@{/Doc/Plugins/slick-carousel/slick/slick.css}" rel="stylesheet">
+    <link th:href="@{/Doc/Plugins/slick-carousel/slick/slick-theme.css}" rel="stylesheet">
+
+    <!--==================== MAIN CSS ====================-->
+    <link th:href="@{/Doc/main.css}" rel="stylesheet">
+    <!--==================== LOCAL CSS ====================-->
+
+</head>
+<body>
+
+<!--==================== HEADER ====================-->
+<header>
+    <div class="header-top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <ul class="top-bar-info list-inline-item pl-0 mb-0">
+                        <li class="list-inline-item">
+                            <a href="mailto:support@gmail.com">
+                                <i class="ri-question-answer-line mr-2"></i>rishara_hospital@moh.gov.my
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <i class="ri-map-pin-line mr-2"></i>43000 Cheras, Selangor, Malaysia
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-lg-right top-right-bar mt-2 mt-lg-0">
+                        <a href="tel:+60 3 8765 4321" >
+                            <span>Call Now : </span>
+                            <span class="h4">+60 3 8765 4321</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navigation" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" th:href="@{/index.html}">
+                <img th:src="@{/Doc/Images/rishara-logo.png}" alt="" class="img-fluid" style="width: 70px; height: 70px;">
+            </a>
+
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="ri-menu-line"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarmain">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{/}">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Patient</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                            <li><a class="dropdown-item" th:href="@{/list-patients.html}">List of Patients</a></li>
+                            <li><a class="dropdown-item" th:href="@{/choose-patient-to-update.html}">Update Patient</a></li>
+                            <li><a class="dropdown-item" th:href="@{/add-patient.html}">Add Patient</a></li>
+                            <li><a class="dropdown-item" th:href="@{/choose-patient-to-delete.html}">Delete Patient</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Disease</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                            <li><a class="dropdown-item" th:href="@{/list-disease.html}">List of Disease</a></li>
+                            <li><a class="dropdown-item" th:href="@{/patient-disease.html}">Patient's Disease</a></li>
+                            <li><a class="dropdown-item" th:href="@{/symptom.html}">Symptom</a></li>
+                            <li><a class="dropdown-item" th:href="@{/treatment.html}">Treatment</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Health Data</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                            <li><a class="dropdown-item" href="/healthDatas/list" th:href="@{/healthDatas/list}">List of Data</a></li>
+                            <li><a class="dropdown-item" href="/healthDatas/update" th:href="@{/healthDatas/update}">Update Data</a></li>
+                            <li><a class="dropdown-item" href="/healthDatas/signup" th:href="@{/healthDatas/signup}">Add Data</a></li>
+                            <li><a class="dropdown-item" href="/healthDatas/delete" th:href="@{/healthDatas/delete}">Delete Data</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" th:href="@{/bmi.html}" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guidelines</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown04">
+                            <li><a class="dropdown-item" th:href="@{/Doc/bmi.html}">BMI</a></li>
+                            <li><a class="dropdown-item" th:href="@{/Doc/heart-rate.html}">Heart Rate</a></li>
+                            <li><a class="dropdown-item" th:href="@{/Doc/blood-pressure.html}">Blood Pressure</a></li>
+                            <li><a class="dropdown-item" th:href="@{/Doc/glucose-level.html}">Glucose Level</a></li>
+                            <li><a class="dropdown-item" th:href="@{/Doc/cholesterol-level.html}">Cholesterol Level</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" th:href="@{/about.html}" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown05">
+                            <li><a class="dropdown-item" th:href="@{/about.html}">About Us</a></li>
+                            <li><a class="dropdown-item" th:href="@{/department.html}">Department</a></li>
+                            <li><a class="dropdown-item" th:href="@{/Doc/service.html}">Service</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/contact.html}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #e12454; color: #ffffff;">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/healthDatas/list" th:href="@{/healthDatas/list}">Back to List of Data</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="container my-5">
+    <h3 class="text-center">Update Health Data</h3>
+    <!-- Card component -->
+    <div class="card">
+        <div class="card-body">
+                <!-- Form for updating staff with Thymeleaf dynamic action URL and object binding -->
+                <form action="#"
+                      th:action="@{/healthDatas/update/{id}(id=${healthData.healthDataId})}"
+                      th:object="${healthData}" th:method="post">
+                    <!-- Select field for patient -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="patient" class="col-form-label">Patient</label>
+                                <select th:field="*{patient.patientId}" class="form-control" id="patient">
+                                    <option value="">Choose Patient...</option>
+                                    <option th:each="patient : ${patients}" th:value="${patient.patientId}" th:text="${patient.patientId}"></option>
+                                </select>
+                                <span th:if="${#fields.hasErrors('patient.patientId')}" th:errors="*{patient.patientId}" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- First row -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Timestamp -->
+                            <div class="form-group">
+                                <label for="timestamp" class="col-form-label">Timestamp</label>
+                                <input type="text" th:field="*{timestamp}" class="form-control" id="timestamp" placeholder="eg: 2024-06-12T10:00:00">
+                                <span th:if="${#fields.hasErrors('timestamp')}" th:errors="*{timestamp}" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Temperature -->
+                            <div class="form-group">
+                                <label for="temperature" class="col-form-label">Temperature</label>
+                                <input type="text" th:field="*{temperature}" class="form-control" id="temperature" placeholder="Enter patient's temperature...">
+                                <span th:if="${#fields.hasErrors('temperature')}" th:errors="*{temperature}" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Second row -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- BMI -->
+                            <div class="form-group">
+                                <label for="bmi" class="col-form-label">BMI</label>
+                                <input type="text" th:field="*{BMI}" class="form-control" id="bmi" placeholder="Enter patient's BMI...">
+                                <span th:if="${#fields.hasErrors('BMI')}" th:errors="*{BMI}" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Weight -->
+                            <div class="form-group">
+                                <label for="weight" class="col-form-label">Weight (kg)</label>
+                                <input type="text" th:field="*{weight}" class="form-control" id="weight" placeholder="Enter patient's weight...">
+                                <span th:if="${#fields.hasErrors('weight')}" th:errors="*{weight}" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Third row -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Heart Rate -->
+                            <div class="form-group">
+                                <label for="heartRate" class="col-form-label">Heart Rate (bpm)</label>
+                                <input type="text" th:field="*{heartRate}" class="form-control" id="heartRate" placeholder="Enter patient's heart rate...">
+                                <span th:if="${#fields.hasErrors('heartRate')}" th:errors="*{heartRate}" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Glucose Level -->
+                            <div class="form-group">
+                                <label for="glucoseLevel" class="col-form-label">Glucose Level (mg/dL)</label>
+                                <input type="text" th:field="*{glucoseLevel}" class="form-control" id="glucoseLevel" placeholder="Enter patient's glucose level...">
+                                <span th:if="${#fields.hasErrors('glucoseLevel')}" th:errors="*{glucoseLevel}" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fourth row -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Systolic -->
+                            <div class="form-group">
+                                <label for="systolic" class="col-form-label">Systolic (mmHg)</label>
+                                <input type="text" th:field="*{systolic}" class="form-control" id="systolic" placeholder="Enter patient's systolic blood pressure...">
+                                <span th:if="${#fields.hasErrors('systolic')}" th:errors="*{systolic}" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Diastolic -->
+                            <div class="form-group">
+                                <label for="diastolic" class="col-form-label">Diastolic (mmHg)</label>
+                                <input type="text" th:field="*{diastolic}" class="form-control" id="diastolic" placeholder="Enter patient's diastolic blood pressure...">
+                                <span th:if="${#fields.hasErrors('diastolic')}" th:errors="*{diastolic}" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fifth row -->
+                    <div class="row">
+                        <!-- HDL -->
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="HDL" class="col-form-label">HDL</label>
+                                <input type="text" th:field="*{HDL}" class="form-control" id="HDL" placeholder="Enter patient's HDL...">
+                                <span th:if="${#fields.hasErrors('HDL')}" th:errors="*{HDL}" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- LDL -->
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="LDL" class="col-form-label">LDL</label>
+                                <input type="text" th:field="*{LDL}" class="form-control" id="LDL" placeholder="Enter patient's LDL...">
+                                <span th:if="${#fields.hasErrors('LDL')}" th:errors="*{LDL}" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- Triglycerides -->
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="triglycerides" class="col-form-label">Triglycerides</label>
+                                <input type="text" th:field="*{triglycerides}" class="form-control" id="triglycerides" placeholder="Enter patient's triglycerides...">
+                                <span th:if="${#fields.hasErrors('triglycerides')}" th:errors="*{triglycerides}" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- Total -->
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="total" class="col-form-label">Total Cholesterol (mg/dL)</label>
+                                <input type="text" th:field="*{total}" class="form-control" id="total" placeholder="Enter patient's total cholesterol...">
+                                <span th:if="${#fields.hasErrors('total')}" th:errors="*{total}" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                        <!-- Submit button -->
+                        <div class="form-group text-right">
+                            <input type="submit" class="btn btn-success"
+                                   value="Update Data">
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
