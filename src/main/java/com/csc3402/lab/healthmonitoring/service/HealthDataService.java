@@ -12,7 +12,7 @@ public interface HealthDataService {
         List<HealthData> listAllStaffs();
 
         // Method to add a new staff member
-        HealthData addNewData(HealthData healthData);
+        HealthData addNewStaff(HealthData healthData);
 
         HealthData QueryHealthDataById(Integer healthDataId);
 
@@ -20,10 +20,10 @@ public interface HealthDataService {
         Optional<HealthData> findHealthDataById(Integer healthDataId);
 
         // Method to update an existing staff member's details
-        void updateData(HealthData healthData);
+        void updateStaff(HealthData healthData);
 
         // Method to delete a staff member
-        void deleteData(HealthData healthData);
+        void deleteStaff(HealthData healthData);
 
 
 }

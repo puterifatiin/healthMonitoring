@@ -12,32 +12,32 @@ public class HealthDataServiceImpl implements HealthDataService{
 
     private final HealthDataRepository healthDataRepository;
 
-    //Constructor Injection to inject HealthDataRepository dependency
+    //Constructor Injection to inject StaffRepository dependency
     public HealthDataServiceImpl(HealthDataRepository healthDataRepository){
         this.healthDataRepository = healthDataRepository;
     }
 
-    // Method to list all health data
+    // Method to list all staff members
     @Override
     public List<HealthData> listAllStaffs() {
         return healthDataRepository.findAll();
     }
 
-    // Method to add a new health data
+    // Method to add a new staff member
     @Override
-    public HealthData addNewData(HealthData healthData) {
+    public HealthData addNewStaff(HealthData healthData) {
         return healthDataRepository.save(healthData);
     }
 
-    // Method to update an existing health data's details
+    // Method to update an existing staff member's details
     @Override
-    public void updateData(HealthData healthData) {
+    public void updateStaff(HealthData healthData) {
         healthDataRepository.save(healthData);
     }
 
-    // Method to delete a health data
+    // Method to delete a staff member
     @Override
-    public void deleteData(HealthData healthData) {
+    public void deleteStaff(HealthData healthData) {
         healthDataRepository.delete(healthData);
     }
 
@@ -46,7 +46,7 @@ public class HealthDataServiceImpl implements HealthDataService{
         return healthDataRepository.findHealthDataById(healthDataId);
     }
 
-    // Method to find a health data by their ID
+    // Method to find a staff member by their ID
     public Optional<HealthData> findHealthDataById(Integer healthDataId) {
         return healthDataRepository.findById(healthDataId);
     }
