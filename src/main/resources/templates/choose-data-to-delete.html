@@ -53,7 +53,7 @@
 
     <nav class="navbar navbar-expand-lg navigation" id="navbar">
         <div class="container">
-            <a class="navbar-brand" th:href="@{/index.html}">
+            <a class="navbar-brand" th:href="@{/}">
                 <img th:src="@{/Doc/Images/rishara-logo.png}" alt="" class="img-fluid" style="width: 70px; height: 70px;">
             </a>
 
@@ -94,7 +94,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" th:href="@{/bmi.html}" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guidelines</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guidelines</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown04">
                             <li><a class="dropdown-item" th:href="@{/Doc/bmi.html}">BMI</a></li>
                             <li><a class="dropdown-item" th:href="@{/Doc/heart-rate.html}">Heart Rate</a></li>
@@ -104,14 +104,14 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" th:href="@{/about.html}" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                            <li><a class="dropdown-item" th:href="@{/about.html}">About Us</a></li>
-                            <li><a class="dropdown-item" th:href="@{/department.html}">Department</a></li>
+                            <li><a class="dropdown-item" th:href="@{/Doc/about.html}">About Us</a></li>
+                            <li><a class="dropdown-item" th:href="@{/Doc/department.html}">Department</a></li>
                             <li><a class="dropdown-item" th:href="@{/Doc/service.html}">Service</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" th:href="@{/contact.html}">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/Doc/contact.html}">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -135,7 +135,8 @@
 </header>
 
 <div class="container my-5">
-            <table class="table table-striped table-responsive-md text-center">
+    <h3 class="text-center">Delete Health Data</h3>
+    <table class="table table-striped table-responsive-md text-center">
                 <thead class="text-center">
                 <tr>
                     <th>Data ID</th>
@@ -183,7 +184,124 @@
             </table>
 </div>
 
+<!--==================== FOOTER ====================-->
+<footer class="footer section gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mr-auto col-sm-6">
+                <div class="widget mb-5 mb-lg-0">
+                    <div class="logo mb-4">
+                        <img th:src="@{/Doc/Images/rishara-logo.png}" alt="" class="img-fluid" style=" width: 100px; height: 100px;">
+                    </div>
+                    <p>Excited to learn more? Visit our platform now and discover all that we have to offer!</p>
 
+                    <ul class="list-inline footer-socials mt-4">
+                        <li class="list-inline-item"><a href="https://www.facebook.com"><i class="ri-facebook-fill"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.twitter.com"><i class="ri-twitter-fill"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.linkedin.com"><i class="ri-linkedin-box-fill"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="widget mb-5 mb-lg-0">
+                    <h4 class="text-capitalize mb-3">Department</h4>
+                    <div class="divider mb-4"></div>
+
+                    <ul class="list-unstyled footer-menu lh-35">
+                        <li><a th:href="@{/Doc/department.html}">Ophthalmology</a></li>
+                        <li><a th:href="@{/Doc/department.html}">Pulmonology</a></li>
+                        <li><a th:href="@{/Doc/department.html}">Cardiology</a></li>
+                        <li><a th:href="@{/Doc/department.html}">Dental Care</a></li>
+                        <li><a th:href="@{/Doc/department.html}">Child Care</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="widget mb-5 mb-lg-0">
+                    <h4 class="text-capitalize mb-3">Support</h4>
+                    <div class="divider mb-4"></div>
+
+                    <ul class="list-unstyled footer-menu lh-35">
+                        <li><a th:href="@{/Doc/about.html}">Terms & Conditions</a></li>
+                        <li><a th:href="@{/Doc/about.html}">Company Support </a></li>
+                        <li><a th:href="@{/Doc/about.html}">Company Licence</a></li>
+                        <li><a th:href="@{/Doc/about.html}">Privacy Policy</a></li>
+                        <li><a th:href="@{/Doc/about.html}">FAQ Questions</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="widget widget-contact mb-5 mb-lg-0">
+                    <h4 class="text-capitalize mb-3">Get in Touch</h4>
+                    <div class="divider mb-4"></div>
+
+                    <div class="footer-contact-block mb-4">
+                        <div class="icon d-flex align-items-center">
+                            <i class="ri-mail-line icon-spacing"></i>
+                            <span class="h6 mb-0">Support Available for 24/7</span>
+                        </div>
+                        <h4 class="mt-2"><a href="mailto:support@gmail.com">rishara_hospital@moh.gov.my</a></h4>
+                    </div>
+
+                    <div class="footer-contact-block">
+                        <div class="icon d-flex align-items-center">
+                            <i class="ri-customer-service-2-line icon-spacing"></i>
+                            <span class="h6 mb-0">Mon to Fri : 08:30 - 18:00</span>
+                        </div>
+                        <h4 class="mt-2"><a href="tel:+60 3 8765 4321">+60 3 8765 4321</a></h4>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-btm py-4 mt-5">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-6">
+                    <div class="copyright">
+                        &copy; Copyright Reserved to <span class="text-color">Rishara</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="subscribe-form text-lg-right mt-5 mt-lg-0">
+                        <form action="#" class="subscribe">
+                            <input type="text" class="form-control" placeholder="Your Email Address">
+                            <a href="#" class="btn btn-main-2 btn-round-full">Subscribe</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <a class="backtop js-scroll-trigger" href="#top">
+                        <i class="ri-arrow-up-line"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--==================== MAIN JS ====================-->
+<!-- Main jQuery -->
+<script th:src="@{/Doc/Plugins/jquery/jquery.min.js}"></script>
+<!-- Bootstrap 4.3.2 -->
+<script th:src="@{/Doc/Plugins/bootstrap/js/popper.js}"></script>
+<script th:src="@{/Doc/Plugins/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/Doc/Plugins/counterup/jquery.easing.js}"></script>
+<!-- Slick Slider -->
+<script th:src="@{/Doc/Plugins/slick-carousel/slick/slick.min.js}"></script>
+<!-- Counterup -->
+<script th:src="@{/Doc/Plugins/counterup/jquery.waypoints.min.js}"></script>
+<script th:src="@{/Doc/Plugins/counterup/jquery.counterup.min.js}"></script>
+<!-- Shuffle -->
+<script th:src="@{/Doc/Plugins/shuffle/shuffle.min.js}"></script>
+
+<!--==================== LOCAL JS ====================-->
+<script th:src="@{/Doc/script.js}"></script>
 
 </body>
 </html>

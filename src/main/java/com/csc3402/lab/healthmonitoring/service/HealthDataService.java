@@ -9,10 +9,10 @@ import java.util.Optional;
 public interface HealthDataService {
 
         // Method to list all staff members
-        List<HealthData> listAllStaffs();
+        List<HealthData> listAllDatas();
 
         // Method to add a new staff member
-        HealthData addNewStaff(HealthData healthData);
+        HealthData addNewData(HealthData healthData);
 
         HealthData QueryHealthDataById(Integer healthDataId);
 
@@ -20,10 +20,10 @@ public interface HealthDataService {
         Optional<HealthData> findHealthDataById(Integer healthDataId);
 
         // Method to update an existing staff member's details
-        void updateStaff(HealthData healthData);
+        void updateData(HealthData healthData);
 
         // Method to delete a staff member
-        void deleteStaff(HealthData healthData);
+        void deleteData(HealthData healthData);
 
 
 }

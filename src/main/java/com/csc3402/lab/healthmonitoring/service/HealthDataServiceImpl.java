@@ -19,25 +19,25 @@ public class HealthDataServiceImpl implements HealthDataService{
 
     // Method to list all staff members
     @Override
-    public List<HealthData> listAllStaffs() {
+    public List<HealthData> listAllDatas() {
         return healthDataRepository.findAll();
     }
 
     // Method to add a new staff member
     @Override
-    public HealthData addNewStaff(HealthData healthData) {
+    public HealthData addNewData(HealthData healthData) {
         return healthDataRepository.save(healthData);
     }
 
     // Method to update an existing staff member's details
     @Override
-    public void updateStaff(HealthData healthData) {
+    public void updateData(HealthData healthData) {
         healthDataRepository.save(healthData);
     }
 
     // Method to delete a staff member
     @Override
-    public void deleteStaff(HealthData healthData) {
+    public void deleteData(HealthData healthData) {
         healthDataRepository.delete(healthData);
     }
 

@@ -56,7 +56,7 @@
 
     <nav class="navbar navbar-expand-lg navigation" id="navbar">
         <div class="container">
-            <a class="navbar-brand" th:href="@{/index.html}">
+            <a class="navbar-brand" th:href="@{/}">
                 <img th:src="@{/Doc/Images/rishara-logo.png}" alt="" class="img-fluid" style="width: 70px; height: 70px;">
             </a>
 
@@ -97,7 +97,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" th:href="@{/bmi.html}" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guidelines</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guidelines</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown04">
                             <li><a class="dropdown-item" th:href="@{/Doc/bmi.html}">BMI</a></li>
                             <li><a class="dropdown-item" th:href="@{/Doc/heart-rate.html}">Heart Rate</a></li>
@@ -107,14 +107,14 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" th:href="@{/about.html}" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                            <li><a class="dropdown-item" th:href="@{/about.html}">About Us</a></li>
-                            <li><a class="dropdown-item" th:href="@{/department.html}">Department</a></li>
+                            <li><a class="dropdown-item" th:href="@{/Doc/about.html}">About Us</a></li>
+                            <li><a class="dropdown-item" th:href="@{/Doc/department.html}">Department</a></li>
                             <li><a class="dropdown-item" th:href="@{/Doc/service.html}">Service</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" th:href="@{/contact.html}">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/Doc/contact.html}">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -139,13 +139,13 @@
 
 <div class="container my-5">
     <h3 class="text-center">Update Health Data</h3>
-    <!-- Card component -->
     <div class="card">
         <div class="card-body">
                 <!-- Form for updating staff with Thymeleaf dynamic action URL and object binding -->
                 <form action="#"
                       th:action="@{/healthDatas/update/{id}(id=${healthData.healthDataId})}"
                       th:object="${healthData}" th:method="post">
+
                     <!-- Select field for patient -->
                     <div class="row">
                         <div class="col-md-6">
@@ -166,7 +166,7 @@
                             <!-- Timestamp -->
                             <div class="form-group">
                                 <label for="timestamp" class="col-form-label">Timestamp</label>
-                                <input type="text" th:field="*{timestamp}" class="form-control" id="timestamp" placeholder="eg: 2024-06-12T10:00:00">
+                                <input type="text" th:field="*{timestamp}" class="form-control" id="timestamp" placeholder="eg: 2024-04-20 08:25:05">
                                 <span th:if="${#fields.hasErrors('timestamp')}" th:errors="*{timestamp}" class="text-danger"></span>
                             </div>
                         </div>
@@ -174,7 +174,7 @@
                             <!-- Temperature -->
                             <div class="form-group">
                                 <label for="temperature" class="col-form-label">Temperature</label>
-                                <input type="text" th:field="*{temperature}" class="form-control" id="temperature" placeholder="Enter patient's temperature...">
+                                <input type="text" th:field="*{temperature}" class="form-control" id="temperature" placeholder="Enter temperature...">
                                 <span th:if="${#fields.hasErrors('temperature')}" th:errors="*{temperature}" class="text-danger"></span>
                             </div>
                         </div>
@@ -186,7 +186,7 @@
                             <!-- BMI -->
                             <div class="form-group">
                                 <label for="bmi" class="col-form-label">BMI</label>
-                                <input type="text" th:field="*{BMI}" class="form-control" id="bmi" placeholder="Enter patient's BMI...">
+                                <input type="text" th:field="*{BMI}" class="form-control" id="bmi" placeholder="Enter BMI...">
                                 <span th:if="${#fields.hasErrors('BMI')}" th:errors="*{BMI}" class="text-danger"></span>
                             </div>
                         </div>
@@ -194,7 +194,7 @@
                             <!-- Weight -->
                             <div class="form-group">
                                 <label for="weight" class="col-form-label">Weight (kg)</label>
-                                <input type="text" th:field="*{weight}" class="form-control" id="weight" placeholder="Enter patient's weight...">
+                                <input type="text" th:field="*{weight}" class="form-control" id="weight" placeholder="Enter weight...">
                                 <span th:if="${#fields.hasErrors('weight')}" th:errors="*{weight}" class="text-danger"></span>
                             </div>
                         </div>
@@ -206,7 +206,7 @@
                             <!-- Heart Rate -->
                             <div class="form-group">
                                 <label for="heartRate" class="col-form-label">Heart Rate (bpm)</label>
-                                <input type="text" th:field="*{heartRate}" class="form-control" id="heartRate" placeholder="Enter patient's heart rate...">
+                                <input type="text" th:field="*{heartRate}" class="form-control" id="heartRate" placeholder="Enter heart rate...">
                                 <span th:if="${#fields.hasErrors('heartRate')}" th:errors="*{heartRate}" class="text-danger"></span>
                             </div>
                         </div>
@@ -214,7 +214,7 @@
                             <!-- Glucose Level -->
                             <div class="form-group">
                                 <label for="glucoseLevel" class="col-form-label">Glucose Level (mg/dL)</label>
-                                <input type="text" th:field="*{glucoseLevel}" class="form-control" id="glucoseLevel" placeholder="Enter patient's glucose level...">
+                                <input type="text" th:field="*{glucoseLevel}" class="form-control" id="glucoseLevel" placeholder="Enter glucose level...">
                                 <span th:if="${#fields.hasErrors('glucoseLevel')}" th:errors="*{glucoseLevel}" class="text-danger"></span>
                             </div>
                         </div>
@@ -226,7 +226,7 @@
                             <!-- Systolic -->
                             <div class="form-group">
                                 <label for="systolic" class="col-form-label">Systolic (mmHg)</label>
-                                <input type="text" th:field="*{systolic}" class="form-control" id="systolic" placeholder="Enter patient's systolic blood pressure...">
+                                <input type="text" th:field="*{systolic}" class="form-control" id="systolic" placeholder="Enter systolic blood pressure...">
                                 <span th:if="${#fields.hasErrors('systolic')}" th:errors="*{systolic}" class="text-danger"></span>
                             </div>
                         </div>
@@ -234,7 +234,7 @@
                             <!-- Diastolic -->
                             <div class="form-group">
                                 <label for="diastolic" class="col-form-label">Diastolic (mmHg)</label>
-                                <input type="text" th:field="*{diastolic}" class="form-control" id="diastolic" placeholder="Enter patient's diastolic blood pressure...">
+                                <input type="text" th:field="*{diastolic}" class="form-control" id="diastolic" placeholder="Enter diastolic blood pressure...">
                                 <span th:if="${#fields.hasErrors('diastolic')}" th:errors="*{diastolic}" class="text-danger"></span>
                             </div>
                         </div>
@@ -246,7 +246,7 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="HDL" class="col-form-label">HDL</label>
-                                <input type="text" th:field="*{HDL}" class="form-control" id="HDL" placeholder="Enter patient's HDL...">
+                                <input type="text" th:field="*{HDL}" class="form-control" id="HDL" placeholder="Enter HDL...">
                                 <span th:if="${#fields.hasErrors('HDL')}" th:errors="*{HDL}" class="text-danger"></span>
                             </div>
                         </div>
@@ -254,7 +254,7 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="LDL" class="col-form-label">LDL</label>
-                                <input type="text" th:field="*{LDL}" class="form-control" id="LDL" placeholder="Enter patient's LDL...">
+                                <input type="text" th:field="*{LDL}" class="form-control" id="LDL" placeholder="Enter LDL...">
                                 <span th:if="${#fields.hasErrors('LDL')}" th:errors="*{LDL}" class="text-danger"></span>
                             </div>
                         </div>
@@ -262,7 +262,7 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="triglycerides" class="col-form-label">Triglycerides</label>
-                                <input type="text" th:field="*{triglycerides}" class="form-control" id="triglycerides" placeholder="Enter patient's triglycerides...">
+                                <input type="text" th:field="*{triglycerides}" class="form-control" id="triglycerides" placeholder="Enter triglycerides...">
                                 <span th:if="${#fields.hasErrors('triglycerides')}" th:errors="*{triglycerides}" class="text-danger"></span>
                             </div>
                         </div>
@@ -270,7 +270,7 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="total" class="col-form-label">Total Cholesterol (mg/dL)</label>
-                                <input type="text" th:field="*{total}" class="form-control" id="total" placeholder="Enter patient's total cholesterol...">
+                                <input type="text" th:field="*{total}" class="form-control" id="total" placeholder="Enter total cholesterol...">
                                 <span th:if="${#fields.hasErrors('total')}" th:errors="*{total}" class="text-danger"></span>
                             </div>
                         </div>
@@ -285,6 +285,125 @@
             </div>
         </div>
     </div>
+
+<!--==================== FOOTER ====================-->
+<footer class="footer section gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mr-auto col-sm-6">
+                <div class="widget mb-5 mb-lg-0">
+                    <div class="logo mb-4">
+                        <img th:src="@{/Doc/Images/rishara-logo.png}" alt="" class="img-fluid" style=" width: 100px; height: 100px;">
+                    </div>
+                    <p>Excited to learn more? Visit our platform now and discover all that we have to offer!</p>
+
+                    <ul class="list-inline footer-socials mt-4">
+                        <li class="list-inline-item"><a href="https://www.facebook.com"><i class="ri-facebook-fill"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.twitter.com"><i class="ri-twitter-fill"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.linkedin.com"><i class="ri-linkedin-box-fill"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="widget mb-5 mb-lg-0">
+                    <h4 class="text-capitalize mb-3">Department</h4>
+                    <div class="divider mb-4"></div>
+
+                    <ul class="list-unstyled footer-menu lh-35">
+                        <li><a th:href="@{/Doc/department.html}">Ophthalmology</a></li>
+                        <li><a th:href="@{/Doc/department.html}">Pulmonology</a></li>
+                        <li><a th:href="@{/Doc/department.html}">Cardiology</a></li>
+                        <li><a th:href="@{/Doc/department.html}">Dental Care</a></li>
+                        <li><a th:href="@{/Doc/department.html}">Child Care</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="widget mb-5 mb-lg-0">
+                    <h4 class="text-capitalize mb-3">Support</h4>
+                    <div class="divider mb-4"></div>
+
+                    <ul class="list-unstyled footer-menu lh-35">
+                        <li><a th:href="@{/Doc/about.html}">Terms & Conditions</a></li>
+                        <li><a th:href="@{/Doc/about.html}">Company Support </a></li>
+                        <li><a th:href="@{/Doc/about.html}">Company Licence</a></li>
+                        <li><a th:href="@{/Doc/about.html}">Privacy Policy</a></li>
+                        <li><a th:href="@{/Doc/about.html}">FAQ Questions</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="widget widget-contact mb-5 mb-lg-0">
+                    <h4 class="text-capitalize mb-3">Get in Touch</h4>
+                    <div class="divider mb-4"></div>
+
+                    <div class="footer-contact-block mb-4">
+                        <div class="icon d-flex align-items-center">
+                            <i class="ri-mail-line icon-spacing"></i>
+                            <span class="h6 mb-0">Support Available for 24/7</span>
+                        </div>
+                        <h4 class="mt-2"><a href="mailto:support@gmail.com">rishara_hospital@moh.gov.my</a></h4>
+                    </div>
+
+                    <div class="footer-contact-block">
+                        <div class="icon d-flex align-items-center">
+                            <i class="ri-customer-service-2-line icon-spacing"></i>
+                            <span class="h6 mb-0">Mon to Fri : 08:30 - 18:00</span>
+                        </div>
+                        <h4 class="mt-2"><a href="tel:+60 3 8765 4321">+60 3 8765 4321</a></h4>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-btm py-4 mt-5">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-6">
+                    <div class="copyright">
+                        &copy; Copyright Reserved to <span class="text-color">Rishara</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="subscribe-form text-lg-right mt-5 mt-lg-0">
+                        <form action="#" class="subscribe">
+                            <input type="text" class="form-control" placeholder="Your Email Address">
+                            <a href="#" class="btn btn-main-2 btn-round-full">Subscribe</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <a class="backtop js-scroll-trigger" href="#top">
+                        <i class="ri-arrow-up-line"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--==================== MAIN JS ====================-->
+<!-- Main jQuery -->
+<script th:src="@{/Doc/Plugins/jquery/jquery.min.js}"></script>
+<!-- Bootstrap 4.3.2 -->
+<script th:src="@{/Doc/Plugins/bootstrap/js/popper.js}"></script>
+<script th:src="@{/Doc/Plugins/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/Doc/Plugins/counterup/jquery.easing.js}"></script>
+<!-- Slick Slider -->
+<script th:src="@{/Doc/Plugins/slick-carousel/slick/slick.min.js}"></script>
+<!-- Counterup -->
+<script th:src="@{/Doc/Plugins/counterup/jquery.waypoints.min.js}"></script>
+<script th:src="@{/Doc/Plugins/counterup/jquery.counterup.min.js}"></script>
+<!-- Shuffle -->
+<script th:src="@{/Doc/Plugins/shuffle/shuffle.min.js}"></script>
+
+<!--==================== LOCAL JS ====================-->
+<script th:src="@{/Doc/script.js}"></script>
 
 </body>
 </html>
