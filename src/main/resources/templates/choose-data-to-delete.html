@@ -69,10 +69,10 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Patient</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                            <li><a class="dropdown-item" th:href="@{/list-patients.html}">List of Patients</a></li>
-                            <li><a class="dropdown-item" th:href="@{/choose-patient-to-update.html}">Update Patient</a></li>
-                            <li><a class="dropdown-item" th:href="@{/add-patient.html}">Add Patient</a></li>
-                            <li><a class="dropdown-item" th:href="@{/choose-patient-to-delete.html}">Delete Patient</a></li>
+                            <li><a class="dropdown-item" href="/patients/list" th:href="@{/patients/list}">List of Patients</a></li>
+                            <li><a class="dropdown-item" href="/patients/update" th:href="@{/patients/update}">Update Patient</a></li>
+                            <li><a class="dropdown-item" href="/patients/signup" th:href="@{/patients/signup}">Add Patient</a></li>
+                            <li><a class="dropdown-item" href="/patients/delete" th:href="@{/patients/delete}">Delete Patient</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">

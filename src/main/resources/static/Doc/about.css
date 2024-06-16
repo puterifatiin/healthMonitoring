@@ -1,0 +1,88 @@
+.img-custom-size-1 {
+    width: 500px;
+    height: 330px;
+    border-radius: 3%;
+}
+
+.abt {
+    font-size: 16px;
+    text-align: justify;
+}
+
+.specialities-section {
+    text-align: center;
+    margin: 15px 0 20px;
+}
+
+.specialities-section p {
+    font-size: 16px;
+    color: #6c757d;
+}
+
+div.scroll-container {
+    background-color: #FFA2B9;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    margin-bottom: 100px;
+}
+
+div.image-wrapper {
+    display: inline-block;
+    text-align: center;
+    margin-right: 10px;
+}
+
+div.image-wrapper img {
+    height: 200px;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+div.image-wrapper .description {
+    color: #4e555b;
+    font-size: 16px;
+}
+
+div.scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+div.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #fae8ed;
+    border-radius: 10px;
+}
+
+div.scroll-container::-webkit-scrollbar-track {
+    background: #FFA2B9;
+    border-radius: 10px;
+}
+
+.achievement-section {
+    text-align: center;
+    margin: 15px 0 40px;
+}
+
+.achievement-section p {
+    font-size: 16px;
+    color: #6c757d;
+}
+
+.achievement h4 {
+    margin-top: 20px;
+}
+
+.achievement p {
+    color: #6c757d;
+    text-align: justify;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.uniform-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #9ea1a2;
+}
+

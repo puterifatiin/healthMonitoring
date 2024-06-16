@@ -127,7 +127,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/healthDatas/list" th:href="@{/healthDatas/list}">Back to List of Data</a>
+                        <a class="nav-link" href="/patients/list" th:href="@{/patients/list}">Back to List of Patient</a>
                     </li>
                 </ul>
             </div>
@@ -136,52 +136,36 @@
 </header>
 
 <div class="container my-5">
-    <h3 class="text-center">Update Health Data</h3>
+    <h3 class="text-center">Update Patient</h3>
     <table class="table table-striped table-responsive-md">
-                <thead class="text-center">
-                <tr>
-                    <th>Data ID</th>
-                    <th>Patient ID</th>
-                    <th>Timestamp</th>
-                    <th>Temperature</th>
-                    <th>BMI</th>
-                    <th>Weight (kg)</th>
-                    <th>Heart Rate (bpm)</th>
-                    <th>Systolic (mmHg)</th>
-                    <th>Diastolic (mmHg)</th>
-                    <th>Glucose Level (mg/dL)</th>
-                    <th>LDL</th>
-                    <th>HDL</th>
-                    <th>Triglycerides</th>
-                    <th>Total Cholesterol (mg/dL)</th>
-                    <th>Update</th>
-                </tr>
-                </thead>
-                <tbody>
-                <!-- Loop through each health data record in the list -->
-                <tr th:each="healthData : ${healthDatas}">
-                    <!-- Display health data details in each row -->
-                    <td th:text="${healthData.healthDataId}"></td>
-                    <td th:text="${healthData.patient != null ? healthData.patient.patientId : 'N/A'}"></td>
-                    <td th:text="${healthData.timestamp}"></td>
-                    <td th:text="${healthData.temperature}"></td>
-                    <td th:text="${healthData.BMI}"></td>
-                    <td th:text="${healthData.weight}"></td>
-                    <td th:text="${healthData.heartRate}"></td>
-                    <td th:text="${healthData.systolic}"></td>
-                    <td th:text="${healthData.diastolic}"></td>
-                    <td th:text="${healthData.glucoseLevel}"></td>
-                    <td th:text="${healthData.LDL}"></td>
-                    <td th:text="${healthData.HDL}"></td>
-                    <td th:text="${healthData.triglycerides}"></td>
-                    <td th:text="${healthData.total}"></td>
-                    <!-- Button to update health data with Thymeleaf dynamic URL generation -->
-                    <td><a th:href="@{/healthDatas/edit/{id}(id=${healthData.healthDataId})}" class="btn btn-success">
-                        <i class="ri-file-edit-line"></i>
-                    </a></td>
-                </tr>
-                </tbody>
-            </table>
+        <thead class="text-center">
+        <tr>
+            <th>Patient ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Height (cm)</th>
+            <th>Contact</th>
+            <th>Update</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Loop through each patient record in the list -->
+        <tr th:each="patient : ${patients}">
+            <!-- Display patient details in each row -->
+            <td th:text="${patient.patientId}"></td>
+            <td th:text="${patient.name}"></td>
+            <td th:text="${patient.gender}"></td>
+            <td th:text="${patient.age}"></td>
+            <td th:text="${patient.height}"></td>
+            <td th:text="${patient.contact}"></td>
+            <!-- Button to update patient with Thymeleaf dynamic URL generation -->
+            <td><a th:href="@{/patients/edit/{id}(id=${patient.patientId})}" class="btn btn-success">
+                <i class="ri-file-edit-line"></i>
+            </a></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 
 <!--==================== FOOTER ====================-->
