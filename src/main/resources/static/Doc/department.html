@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Rishara Hospital </title>
+
+    <!--==================== ICON WEBSITE ====================-->
+    <link rel="shortcut icon" type="image/x-icon" href="/Doc/Images/rishara-logo.png" />
+
+    <!--==================== BOOTSTRAP CSS ====================-->
+    <link rel="stylesheet" href="/Doc/Plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!--==================== REMIXICON CSS ====================-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!--==================== SLICK SLIDER CSS ====================-->
+    <link rel="stylesheet" href="/Doc/Plugins/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="/Doc/Plugins/slick-carousel/slick/slick-theme.css">
+
+    <!--==================== MAIN CSS ====================-->
+    <link rel="stylesheet" href="/Doc/main.css">
+    <!--==================== LOCAL CSS ====================-->
+
+</head>
+
+<body id="top">
+
+<!--==================== HEADER ====================-->
+<header>
+    <div class="header-top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <ul class="top-bar-info list-inline-item pl-0 mb-0">
+                        <li class="list-inline-item">
+                            <a href="mailto:support@gmail.com">
+                                <i class="ri-question-answer-line mr-2"></i>rishara_hospital@moh.gov.my
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <i class="ri-map-pin-line mr-2"></i>43000 Cheras, Selangor, Malaysia
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-lg-right top-right-bar mt-2 mt-lg-0">
+                        <a href="tel:+60 3 8765 4321" >
+                            <span>Call Now : </span>
+                            <span class="h4">+60 3 8765 4321</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navigation" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/healthDatas/home" th:href="@{/healthDatas/home}">
+                <img src="/Doc/Images/rishara-logo.png" alt="" class="img-fluid" style="width: 70px; height: 70px;">
+            </a>
+
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="ri-menu-line"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarmain">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/healthDatas/home" th:href="@{/healthDatas/home}">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Patient</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                            <li><a class="dropdown-item" href="/patients/list" th:href="@{/patients/list}">List of Patients</a></li>
+                            <li><a class="dropdown-item" href="/patients/update" th:href="@{/patients/update}">Update Patient</a></li>
+                            <li><a class="dropdown-item" href="/patients/signup" th:href="@{/patients/signup}">Add Patient</a></li>
+                            <li><a class="dropdown-item" href="/patients/delete" th:href="@{/patients/delete}">Delete Patient</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Disease</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                            <li><a class="dropdown-item" th:href="@{/list-disease.html}">List of Disease</a></li>
+                            <li><a class="dropdown-item" th:href="@{/patient-disease.html}">Patient's Disease</a></li>
+                            <li><a class="dropdown-item" th:href="@{/symptom.html}">Symptom</a></li>
+                            <li><a class="dropdown-item" th:href="@{/treatment.html}">Treatment</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Health Data</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                            <li><a class="dropdown-item" href="/healthDatas/list" th:href="@{/healthDatas/list}">List of Data</a></li>
+                            <li><a class="dropdown-item" href="/healthDatas/update" th:href="@{/healthDatas/update}">Update Data</a></li>
+                            <li><a class="dropdown-item" href="/healthDatas/signup" th:href="@{/healthDatas/signup}">Add Data</a></li>
+                            <li><a class="dropdown-item" href="/healthDatas/delete" th:href="@{/healthDatas/delete}">Delete Data</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guidelines</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown04">
+                            <li><a class="dropdown-item" href="/Doc/bmi.html">BMI</a></li>
+                            <li><a class="dropdown-item" href="/Doc/heart-rate.html">Heart Rate</a></li>
+                            <li><a class="dropdown-item" href="/Doc/blood-pressure.html">Blood Pressure</a></li>
+                            <li><a class="dropdown-item" href="/Doc/glucose-level.html">Glucose Level</a></li>
+                            <li><a class="dropdown-item" href="/Doc/cholesterol-level.html">Cholesterol Level</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown05">
+                            <li><a class="dropdown-item" href="/Doc/about.html">About Us</a></li>
+                            <li><a class="dropdown-item" href="/Doc/department.html">Department</a></li>
+                            <li><a class="dropdown-item" href="/Doc/services.html">Service</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/Doc/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!--==================== CONTENT OF BODY ====================-->
+<!-- Department Section -->
+<section class="page-title" style="background: url('/Doc/Images/22.jpg') no-repeat 50% 50%; background-size: cover; position: relative;">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block text-center">
+                    <span class="text-white">Our Department</span>
+                    <h1 class="text-capitalize mb-5 text-lg">Care Department</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section service-2">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service-block mb-5">
+                    <img src="/Doc/Images/service-3.jpg" alt="" class="img-fluid">
+                    <div class="content">
+                        <h4 class="mt-4 mb-2 title-color">Ophthalmology</h4>
+                        <p class="mb-4">
+                            The ophthalmology department specializes in the diagnosis, treatment, and prevention of eye diseases and vision problems.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service-block mb-5">
+                    <img src="/Doc/Images/service-6.jpg" alt="" class="img-fluid">
+                    <div class="content">
+                        <h4 class="mt-4 mb-2 title-color">Pulmonology</h4>
+                        <p class="mb-4">
+                            The pulmonology department specializes in diagnosing and treating respiratory system diseases and conditions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service-block mb-5 mb-lg-0">
+                    <img src="/Doc/Images/service-2.jpg" alt="" class="img-fluid">
+                    <div class="content">
+                        <h4 class="mt-4 mb-2 title-color">Cardiology</h4>
+                        <p class="mb-4">
+                            The cardiology department specializes in diagnosing and treating heart and blood vessel disorders.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service-block mb-5 mb-lg-0">
+                    <img src="/Doc/Images/service-4.jpg" alt="" class="img-fluid">
+                    <div class="content">
+                        <h4 class="mt-4 mb-2 title-color">Dental Care</h4>
+                        <p class="mb-4">The dental care department focuses on maintaining and improving oral health through services such as cleanings, exams, and treatments for various dental conditions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service-block mb-5 mb-lg-0">
+                    <img src="/Doc/Images/service-1.jpg" alt="" class="img-fluid">
+                    <div class="content">
+                        <h4 class="mt-4 mb-2 title-color">Child Care</h4>
+                        <p class="mb-4">The child care department oversees the well-being and development of children by providing essential services such as education, health care, and support for families.</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<section class="section cta-page" style="background: url('/Doc/Images/banner.jpg') no-repeat; background-size: cover; position: relative;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="cta-content">
+                    <div class="divider mb-4"></div>
+                    <h2 class="mb-5 text-lg">We are pleased to offer you the <span class="title-color">chance to have the healthy</span></h2>
+                    <a href="#" class="btn btn-main-2 btn-round-full">Get appoinment<i class="icofont-simple-right  ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--==================== FOOTER ====================-->
+<footer class="footer section gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mr-auto col-sm-6">
+                <div class="widget mb-5 mb-lg-0">
+                    <div class="logo mb-4">
+                        <img src="/Doc/Images/rishara-logo.png" alt="" class="img-fluid" style=" width: 100px; height: 100px;">
+                    </div>
+                    <p>Excited to learn more? Visit our platform now and discover all that we have to offer!</p>
+
+                    <ul class="list-inline footer-socials mt-4">
+                        <li class="list-inline-item"><a href="https://www.facebook.com"><i class="ri-facebook-fill"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.twitter.com"><i class="ri-twitter-fill"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.linkedin.com"><i class="ri-linkedin-box-fill"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="widget mb-5 mb-lg-0">
+                    <h4 class="text-capitalize mb-3">Department</h4>
+                    <div class="divider mb-4"></div>
+
+                    <ul class="list-unstyled footer-menu lh-35">
+                        <li><a href="/Doc/department.html">Ophthalmology</a></li>
+                        <li><a href="/Doc/department.html">Pulmonology</a></li>
+                        <li><a href="/Doc/department.html">Cardiology</a></li>
+                        <li><a href="/Doc/department.html">Dental Care</a></li>
+                        <li><a href="/Doc/department.html">Child Care</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="widget mb-5 mb-lg-0">
+                    <h4 class="text-capitalize mb-3">Support</h4>
+                    <div class="divider mb-4"></div>
+
+                    <ul class="list-unstyled footer-menu lh-35">
+                        <li><a href="/Doc/about.html">Terms & Conditions</a></li>
+                        <li><a href="/Doc/about.html">Company Support </a></li>
+                        <li><a href="/Doc/about.html">Company Licence</a></li>
+                        <li><a href="/Doc/about.html">Privacy Policy</a></li>
+                        <li><a href="/Doc/about.html">FAQ Questions</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="widget widget-contact mb-5 mb-lg-0">
+                    <h4 class="text-capitalize mb-3">Get in Touch</h4>
+                    <div class="divider mb-4"></div>
+
+                    <div class="footer-contact-block mb-4">
+                        <div class="icon d-flex align-items-center">
+                            <i class="ri-mail-line icon-spacing"></i>
+                            <span class="h6 mb-0">Support Available for 24/7</span>
+                        </div>
+                        <h4 class="mt-2"><a href="mailto:support@gmail.com">rishara_hospital@moh.gov.my</a></h4>
+                    </div>
+
+                    <div class="footer-contact-block">
+                        <div class="icon d-flex align-items-center">
+                            <i class="ri-customer-service-2-line icon-spacing"></i>
+                            <span class="h6 mb-0">Mon to Fri : 08:30 - 18:00</span>
+                        </div>
+                        <h4 class="mt-2"><a href="tel:+60 3 8765 4321">+60 3 8765 4321</a></h4>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-btm py-4 mt-5">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-6">
+                    <div class="copyright">
+                        &copy; Copyright Reserved to <span class="text-color">Rishara</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="subscribe-form text-lg-right mt-5 mt-lg-0">
+                        <form action="#" class="subscribe">
+                            <input type="text" class="form-control" placeholder="Your Email Address">
+                            <a href="#" class="btn btn-main-2 btn-round-full">Subscribe</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <a class="backtop js-scroll-trigger" href="#top">
+                        <i class="ri-arrow-up-line"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--==================== MAIN JS ====================-->
+<!-- Main jQuery -->
+<script src="/Doc/Plugins/jquery/jquery.js"></script>
+<!-- Bootstrap 4.3.2 -->
+<script src="/Doc/Plugins/bootstrap/js/popper.js"></script>
+<script src="/Doc/Plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="/Doc/Plugins/counterup/jquery.easing.js"></script>
+<!-- Slick Slider -->
+<script src="/Doc/Plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Counterup -->
+<script src="/Doc/Plugins/counterup/jquery.waypoints.min.js"></script>
+<script src="/Doc/Plugins/counterup/jquery.counterup.min.js"></script>
+<!-- Shuffle -->
+<script src="/Doc/Plugins/shuffle/shuffle.min.js"></script>
+
+<!--==================== LOCAL JS ====================-->
+<script src="/Doc/script.js"></script>
+
+</body>
+</html>
