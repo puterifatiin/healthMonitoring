@@ -16,4 +16,3 @@ values ('2024-04-21 09:15:35', 36.8, 27.7, 43.0, 75, 140, 80, 180.0, 60.0, 80.0,
 insert into health_data(timestamp, temperature, bmi, weight, heart_rate, systolic, diastolic, glucose_level, hdl, ldl, triglycerides, total)
 values ('2024-04-22 14:45:20', 37.5, 32.1, 100.0, 85, 120, 80, 95.0, 35.0, 150.0, 70.0, 240.0);
 
-
