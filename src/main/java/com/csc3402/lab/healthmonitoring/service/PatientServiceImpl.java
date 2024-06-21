@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class PatientServiceImpl implements PatientService{
+public class PatientServiceImpl implements PatientService {
 
     private final PatientRepository patientRepository;
 
@@ -22,8 +22,7 @@ public class PatientServiceImpl implements PatientService{
     }
 
     @Override
-    public Patient addNewPatient(Patient patient) {
-        return patientRepository.save(patient);
+    public Patient addNewPatient(Patient patient) { return patientRepository.save(patient);
     }
 
     public Optional<Patient> findPatientById(Integer patientId) {

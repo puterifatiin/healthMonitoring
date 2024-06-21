@@ -27,6 +27,10 @@ public class Patient {
     @Column(name = "contact")
     private String contact;
 
+
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<HealthData> healthDatas;
+
     public Patient() {
     }
 
@@ -39,8 +43,6 @@ public class Patient {
         this.contact = contact;
     }
 
-    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
-    private Set<HealthData> healthData;
 
     public Integer getPatientId() {
         return patientId;
@@ -90,6 +92,14 @@ public class Patient {
         this.contact = contact;
     }
 
+    public Set<HealthData> getHealthDatas() {
+        return healthDatas;
+    }
+
+    public void setHealthDatas(Set<HealthData> healthDatas) {
+        this.healthDatas = healthDatas;
+    }
+
     @Override
     public String toString() {
         return "Patient{" +
@@ -99,6 +109,7 @@ public class Patient {
                 ", age=" + age +
                 ", height=" + height +
                 ", contact='" + contact + '\'' +
+                ", healthDatas=" + healthDatas +
                 '}';
     }
 }

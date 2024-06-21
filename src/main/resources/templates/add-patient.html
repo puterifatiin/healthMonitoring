@@ -146,14 +146,6 @@
                 <!-- First row -->
                 <div class="row">
                     <div class="col-md-6">
-                        <!-- Patient ID -->
-                        <div class="form-group">
-                            <label for="patientId" class="col-form-label">Patient ID</label>
-                            <input type="text" th:field="*{patientId}" class="form-control" id="patientId" placeholder="Enter Patient ID">
-                            <span th:if="${#fields.hasErrors('patientId')}" th:errors="*{patientId}" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
                         <!-- Name -->
                         <div class="form-group">
                             <label for="name" class="col-form-label">Name</label>

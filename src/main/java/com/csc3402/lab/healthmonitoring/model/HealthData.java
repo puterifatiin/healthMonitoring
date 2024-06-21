@@ -49,7 +49,7 @@ public class HealthData {
     private double total;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "patient_id")
+    @JoinColumn(name = "patient_Id")
     private Patient patient;
 
     // Default constructor

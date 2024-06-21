@@ -78,7 +78,6 @@ public class HealthMonitoringController {
         return "list-data";
     }
 
-    // DELETE STAFF
     @GetMapping("delete")
     public String showDeleteMainForm(Model model) {
         model.addAttribute("healthDatas", healthDataService.listAllDatas());
