@@ -153,6 +153,14 @@
                             <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <!-- Age -->
+                        <div class="form-group">
+                            <label for="age" class="col-form-label">Age</label>
+                            <input type="text" th:field="*{age}" class="form-control" id="age" placeholder="Enter Age">
+                            <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}" class="text-danger"></span>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Second row -->
@@ -166,11 +174,11 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <!-- Age -->
+                        <!-- Contact -->
                         <div class="form-group">
-                            <label for="age" class="col-form-label">Age</label>
-                            <input type="text" th:field="*{age}" class="form-control" id="age" placeholder="Enter Age">
-                            <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}" class="text-danger"></span>
+                            <label for="contact" class="col-form-label">Contact</label>
+                            <input type="text" th:field="*{contact}" class="form-control" id="contact" placeholder="Enter Contact">
+                            <span th:if="${#fields.hasErrors('contact')}" th:errors="*{contact}" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
@@ -183,14 +191,6 @@
                             <label for="height" class="col-form-label">Height (cm)</label>
                             <input type="text" th:field="*{height}" class="form-control" id="height" placeholder="Enter Height">
                             <span th:if="${#fields.hasErrors('height')}" th:errors="*{height}" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <!-- Contact -->
-                        <div class="form-group">
-                            <label for="contact" class="col-form-label">Contact</label>
-                            <input type="text" th:field="*{contact}" class="form-control" id="contact" placeholder="Enter Contact">
-                            <span th:if="${#fields.hasErrors('contact')}" th:errors="*{contact}" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
