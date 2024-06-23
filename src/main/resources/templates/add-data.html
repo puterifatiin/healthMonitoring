@@ -87,18 +87,10 @@
                             <li><a class="dropdown-item" th:href="@{/treatment.html}">Treatment</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item"><a class="nav-link" href="/patients/view" th:href="@{/patients/view}">Health Data</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Health Data</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guidelines</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                            <li><a class="dropdown-item" href="/healthDatas/list" th:href="@{/healthDatas/list}">List of Data</a></li>
-                            <li><a class="dropdown-item" href="/healthDatas/update" th:href="@{/healthDatas/update}">Update Data</a></li>
-                            <li><a class="dropdown-item" href="/healthDatas/signup" th:href="@{/healthDatas/signup}">Add Data</a></li>
-                            <li><a class="dropdown-item" href="/healthDatas/delete" th:href="@{/healthDatas/delete}">Delete Data</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guidelines</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdown04">
                             <li><a class="dropdown-item" th:href="@{/Doc/bmi.html}">BMI</a></li>
                             <li><a class="dropdown-item" th:href="@{/Doc/heart-rate.html}">Heart Rate</a></li>
                             <li><a class="dropdown-item" th:href="@{/Doc/blood-pressure.html}">Blood Pressure</a></li>
@@ -107,8 +99,8 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdown05">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown04">
                             <li><a class="dropdown-item" th:href="@{/Doc/about.html}">About Us</a></li>
                             <li><a class="dropdown-item" th:href="@{/Doc/department.html}">Department</a></li>
                             <li><a class="dropdown-item" th:href="@{/Doc/service.html}">Service</a></li>
@@ -129,7 +121,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/healthDatas/list" th:href="@{/healthDatas/list}">Back to List of Data</a>
+                        <a class="nav-link" href="/healthDatas/view" th:href="@{/healthDatas/view}">Back to List of Data</a>
                     </li>
                 </ul>
             </div>
@@ -141,22 +133,14 @@
     <h3 class="text-center">Add Health Data</h3>
     <div class="card">
         <div class="card-body">
+
             <form action="#" th:action="@{/healthDatas/add}" th:object="${healthData}" method="post">
-
-                <!-- Select field for patient -->
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="patient" class="col-form-label">Patient</label>
-                            <select th:field="*{patient.patientId}" class="form-control" id="patient">
-                                <option value="">Choose Patient...</option>
-                                <option th:each="patient : ${patients}" th:value="${patient.patientId}" th:text="${patient.patientId}"></option>
-                            </select>
-                            <span th:if="${#fields.hasErrors('patient.patientId')}" th:errors="*{patient.patientId}" class="text-danger"></span>
-                        </div>
-                    </div>
+                <div>
+                    <label for="patient">Patient</label>
+                    <select id="patient" th:field="*{patient.patientId}">
+                        <option th:each="patient : ${patients}" th:value="${patient.patientId}" th:text="${patient.name}">Patient Name</option>
+                    </select>
                 </div>
-
                 <!-- First row -->
                 <div class="row">
                     <div class="col-md-6">

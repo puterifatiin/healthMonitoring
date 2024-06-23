@@ -38,6 +38,7 @@ public class HealthDataServiceImpl implements HealthDataService{
     // Method to delete a staff member
     @Override
     public void deleteData(HealthData healthData) {
+
         healthDataRepository.delete(healthData);
     }
 
@@ -46,8 +47,15 @@ public class HealthDataServiceImpl implements HealthDataService{
         return healthDataRepository.findHealthDataById(healthDataId);
     }
 
-    // Method to find a staff member by their ID
+    // Method to find a health data by their ID
     public Optional<HealthData> findHealthDataById(Integer healthDataId) {
         return healthDataRepository.findById(healthDataId);
     }
+
+    // Method to find health data records by patient ID
+    @Override
+    public List<HealthData> findHealthDataByPatientId(int patientId) {
+        return healthDataRepository.findByPatient_PatientId(patientId);
+    }
+
 }
