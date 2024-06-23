@@ -84,18 +84,10 @@
                             <li><a class="dropdown-item" th:href="@{/treatment.html}">Treatment</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item"><a class="nav-link" href="/patients/view" th:href="@{/patients/view}">Health Data</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Health Data</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guidelines</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                            <li><a class="dropdown-item" href="/healthDatas/list" th:href="@{/healthDatas/list}">List of Data</a></li>
-                            <li><a class="dropdown-item" href="/healthDatas/update" th:href="@{/healthDatas/update}">Update Data</a></li>
-                            <li><a class="dropdown-item" href="/healthDatas/signup" th:href="@{/healthDatas/signup}">Add Data</a></li>
-                            <li><a class="dropdown-item" href="/healthDatas/delete" th:href="@{/healthDatas/delete}">Delete Data</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guidelines</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdown04">
                             <li><a class="dropdown-item" th:href="@{/Doc/bmi.html}">BMI</a></li>
                             <li><a class="dropdown-item" th:href="@{/Doc/heart-rate.html}">Heart Rate</a></li>
                             <li><a class="dropdown-item" th:href="@{/Doc/blood-pressure.html}">Blood Pressure</a></li>
@@ -104,8 +96,8 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdown05">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown04">
                             <li><a class="dropdown-item" th:href="@{/Doc/about.html}">About Us</a></li>
                             <li><a class="dropdown-item" th:href="@{/Doc/department.html}">Department</a></li>
                             <li><a class="dropdown-item" th:href="@{/Doc/service.html}">Service</a></li>
@@ -125,9 +117,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                        <a class="nav-link" href="/healthDatas/update" th:href="@{/healthDatas/update}">Update Data</a>
-                        <a class="nav-link" href="/healthDatas/signup" th:href="@{/healthDatas/signup}">Add Data</a>
-                        <a class="nav-link" href="/healthDatas/delete" th:href="@{/healthDatas/delete}">Delete Data</a>
+                    <a class="nav-link" href="/patients/list" th:href="@{/patients/list}">List of Patients</a>
                 </ul>
             </div>
         </div>
@@ -135,48 +125,35 @@
 </header>
 
 <div class="container my-5">
-    <h3 class="text-center">List of Health Data</h3>
+    <h3 class="text-center">List of Patient's Health Data</h3>
         <table class="table table-striped table-responsive-md">
             <thead class="text-center">
             <tr>
-                <th>Data ID</th>
                 <th>Patient ID</th>
-                <th>Timestamp</th>
-                <th>Temperature</th>
-                <th>BMI</th>
-                <th>Weight (kg)</th>
-                <th>Heart Rate (bpm)</th>
-                <th>Systolic (mmHg)</th>
-                <th>Diastolic (mmHg)</th>
-                <th>Glucose Level (mg/dL)</th>
-                <th>LDL</th>
-                <th>HDL</th>
-                <th>Triglycerides</th>
-                <th>Total Cholesterol (mg/dL)</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+                <th>Height (cm)</th>
+                <th>Contact</th>
+                <th>Health Data</th>
             </tr>
             </thead>
             <tbody>
-            <!-- Condition to check if staff list is empty -->
-            <tr th:if="${healthDatas.isEmpty()}">
-                <td colspan="2"> No Staffs Available</td>
+            <tr th:if="${patients.isEmpty()}">
+                <td colspan="7" class="text-center">No Patients Available</td>
             </tr>
-            <!-- Loop through each staff in the staff list -->
-            <tr th:each="healthData : ${healthDatas}">
-                <!-- Display health data details in each row -->
-                <td th:text="${healthData.healthDataId}"></td>
-                <td th:text="${healthData.patient != null ? healthData.patient.patientId : 'N/A'}"></td>
-                <td th:text="${healthData.timestamp}"></td>
-                <td th:text="${healthData.temperature}"></td>
-                <td th:text="${healthData.BMI}"></td>
-                <td th:text="${healthData.weight}"></td>
-                <td th:text="${healthData.heartRate}"></td>
-                <td th:text="${healthData.systolic}"></td>
-                <td th:text="${healthData.diastolic}"></td>
-                <td th:text="${healthData.glucoseLevel}"></td>
-                <td th:text="${healthData.LDL}"></td>
-                <td th:text="${healthData.HDL}"></td>
-                <td th:text="${healthData.triglycerides}"></td>
-                <td th:text="${healthData.total}"></td>
+            <tr th:each="patient : ${patients}">
+                <td><span th:text="${patient.patientId}"></span></td>
+                <td><span th:text="${patient.name}"></span></td>
+                <td><span th:text="${patient.gender}"></span></td>
+                <td><span th:text="${patient.age}"></span></td>
+                <td><span th:text="${patient.height}"></span></td>
+                <td><span th:text="${patient.contact}"></span></td>
+                <td>
+                    <a th:href="@{/healthDatas/view/{id}(id=${patient.patientId})}" class="btn btn-success">
+                        <i class="ri-list-view"></i> View
+                    </a>
+                </td>
             </tr>
             </tbody>
         </table>

@@ -1,6 +1,8 @@
 package com.csc3402.lab.healthmonitoring.controller;
 
+import com.csc3402.lab.healthmonitoring.model.HealthData;
 import com.csc3402.lab.healthmonitoring.model.Patient;
+import com.csc3402.lab.healthmonitoring.service.HealthDataService;
 import com.csc3402.lab.healthmonitoring.service.PatientService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -11,14 +13,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/patients")
 public class PatientController {
     private final PatientService patientService;
+    private final HealthDataService healthDataService;
 
-    public PatientController(PatientService patientService){
+
+    public PatientController(PatientService patientService, HealthDataService healthDataService){
 
         this.patientService = patientService;
+        this.healthDataService = healthDataService;
+
     }
 
     @GetMapping("/home")
@@ -87,5 +95,8 @@ public class PatientController {
         model.addAttribute("patients", patientService.listAllPatients());
         return "list-patients";
     }
+
+
+
 }
 
